@@ -46,4 +46,4 @@ class GardenHui extends TimberSite {
 	}
 }
 
-new StarterSite();
+new GardenHui();
