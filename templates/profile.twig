@@ -1,0 +1,63 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <div class="container container--narrow article__container">
+    <h2>Hello {{ user.display_name | parse_display_name }}</h2>
+    <form class="register" action="/update-profile" method="post">
+      <fieldset>
+        <label class="register__label" for="first_name">First Name</label>
+        <input
+          class="register__input"
+          name="first_name"
+          type="text"
+          value="{{ user.first_name }}"
+          disabled>
+      </fieldset>
+
+
+      <fieldset>
+        <label class="register__label" for="last_name">Last Name</label>
+        <input
+          class="register__input"
+          name="last_name"
+          type="text"
+          value="{{ user.last_name }}"
+          disabled>
+      </fieldset>
+
+
+      <fieldset>
+          <label class="register__label" for="last_name">Profile Image</label>
+      {% if user.image.src %}
+          <img class="register__image"
+               src="{{ user.image | resize(60, 60) }}"
+               lalt="{{ user.first_name }} {{ user.last_name }}">
+      {% else %}
+        <div id="gardenhui-register" class="dropzone register__dropzone"></div>
+      {% endif %}
+      </fieldset>
+
+
+      <fieldset>
+        <label class="register__label" for="email">Email</label>
+        <input class="register__input" name="email" type="email" value="{{user.user_email}}" disabled>
+      </fieldset>
+
+      {% render "@divider" %}
+
+      {{ edit_profile(user.ID) }}
+
+      <div style="text-align: right; padding: 2em 5% 2em 0;">
+        <input class="register__btn" value="Update Profile" type="submit">
+      </div>
+      <input type="hidden" name="image">
+    </form>
+
+  {% render "@divider" %}
+
+  {% if not form.completed %}
+    <a href="/form/{{form.ID}}">Take our survey to better improve your matches!</a>
+  {% endif %}
+
+  </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <article class="article">
+    {% for module in post.get_field('modules') %}
+      {% include components["module-" ~ module.acf_fc_layout] with module only %}
+    {% endfor %}
+  </article>
+  {% render "register-form" %}
+{% endblock %}

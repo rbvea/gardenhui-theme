@@ -1,0 +1,8 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <div class="container article__container">
+    <h1>Connect</h1>
+    {% include 'profile-list/profile-list.twig' with { people: users } %}
+  </div>
+{% endblock %}

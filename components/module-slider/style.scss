@@ -1,0 +1,61 @@
+.frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  white-space: nowrap;
+}
+
+.slides {
+  display: inline-block;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: {
+    size: cover;
+  }
+
+  &__image {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 75px);
+    background: {
+      color: rgba(darken($olive, 15%), 0.5);
+      size: cover;
+      blend-mode: color-burn;
+    }
+    align-items: center;
+  }
+
+  &__title,
+  &__description {
+    color: $white;
+    text-shadow: 0 0 10px $black;
+  }
+
+  &__title {
+    font-size: ms(3);
+  }
+
+  &__description {
+    font-size: responsive 18px 36px;
+    line-height: 1.25;
+  }
+}
+
+.flickity {
+
+  &-page-dots {
+    bottom: 1rem;
+  }
+
+  &-prev-next-button  {
+    @media $handheld {
+      display: none;
+    }
+  }
+}

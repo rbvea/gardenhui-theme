@@ -1,0 +1,31 @@
+
+.profile {
+  @media $desktop {
+    lost-column: 1/4;
+  }
+  text-align: center;
+  background: #EFEFEF;
+  padding: 2%;
+
+  &__name-link {
+    text-transform: capitalize;
+    color: $olive;
+  }
+
+  &__wrapper {
+    clear: fix;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 50%;
+    margin: 0 0 0.25em;
+    max-width: 20em;
+  }
+
+  &__button {
+    @media $desktop {
+      margin: 2.5em 0 0;
+    }
+  }
+}

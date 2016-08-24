@@ -1,0 +1,30 @@
+///
+/// @name button
+/// @author
+///
+///
+
+.button {
+  display: inline-block;
+  padding: 0.3125em 0.75em 0.4em;
+  font-weight: 600;
+  text-decoration: none;
+  color: $white;
+  background: $green;
+  transition: background 0.35s;
+
+  &:hover {
+    background: lighten($green, 10%);
+  }
+
+  &__icon {
+    margin-left: rem(-3px);
+    fill: $white;
+  }
+
+  &__submit {
+    border-width: 0;
+    font-size: 1em;
+    margin: 0 0 1em;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "context": {
+    "site": {
+      "name": "GardenHui"
+    },
+    "is_logged_in": true
+  }
+}

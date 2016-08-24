@@ -1,0 +1,13 @@
+<div class="profile-list__wrapper">
+  <h1 class="profile-list__title">{{ title }}</h1>
+  <div {% include "profile-list/attributes.twig" %}>
+  {% for person in people if person and person.ID != current_user.ID %}
+      {% render "@profile", {
+        ID: person.ID,
+        image: person.image,
+        display_name: person.display_name,
+        private_profile: person.private_profile,
+      } %}
+    {% endfor %}
+  </div>
+</div>

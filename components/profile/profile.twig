@@ -1,0 +1,21 @@
+<div class="profile">
+  <h3 class="profile__name">
+    <a class="profile__name-link" href="/profile/{{ID}}/">
+      {% if not private_profile %}
+        {{ display_name | parse_display_name }}
+      {% else %}
+        GardenHui User
+      {% endif %}
+    </a>
+  </h3>
+  {% if image and not private_profile %}
+    {% set img = TimberImage(image) %}
+    <img class="profile__image" src="{{ img.src('profile') }}" alt="" />
+  {% else %}
+    <img class="profile__image" src="/wp-content/themes/garden-hui-theme/images/ulu.jpg" alt="" />
+  {% endif %}
+
+  <div class="profile__button">
+    {% render "@button", { classes: "button", href: "/profile/#{ID}/", text: "MORE" } %}
+  </div>
+</div >

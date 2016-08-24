@@ -1,0 +1,18 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+<div class="container container--narrow article__container">
+  <h1>GardenHui Survey</h1>
+  {{ fn('acf_form', {
+      post_id: params.id,
+      fields: ['field_57a69f78346f0',
+              'field_57a6a03e346f3',
+              'field_57a6a0db346f4',
+              'field_57a6a12f346f5',
+              'field_57a6a175346f6',
+              'field_57a6a198346f7',
+              'field_57a6a1e9346f8'] })
+  }}
+
+</div>
+{% endblock %}

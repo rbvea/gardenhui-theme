@@ -1,0 +1,41 @@
+<div class="container register__container">
+  <p style="display: block; max-width: 40em; margin: 0 auto 5em;">
+    Sign up for GardenHui and we'll let you know when you can start making connections
+    with other GardenHui members!
+  </p>
+  <form id="register-form" class="register" action="/signup" method="POST">
+    <fieldset>
+      <label class="register__label" for="first_name">Username<span class="required">*</span></label>
+      <input class="register__input" name="first_name" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label class="register__label" for="first_name">First Name <span class="required">*</span></label>
+      <input class="register__input" name="first_name" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label class="register__label" for="last_name">Last Name <span class="required">*</span></label>
+      <input class="register__input" name="last_name" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label class="register__label" for="email">Email <span class="required">*</span></label>
+      <input class="register__input" name="email" type="email" required>
+    </fieldset>
+    <fieldset>
+      <label class="register__label" for="password">Password <span class="required">*</span></label>
+      <input class="register__input" name="password" type="password" required>
+    </fieldset>
+
+    {% render "@divider" %}
+
+    <fieldset>
+      <label class="register__label" for="image">Profile Image</label>
+      <div id="gardenhui-register" class="register__dropzone dropzone"></div>
+    </fieldset>
+
+    {% render "@divider" %}
+
+    {{ register_form() }}
+    <input type="hidden" name="image">
+    <input type="submit" class="button button__submit" value="Submit">
+  </form>
+</div>

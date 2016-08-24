@@ -1,59 +1,23 @@
-{% block html_head_container %}
-
 {% include 'html-header.twig' %}
-	{% block head %}
-	{% endblock %}
-	</head>
-{% endblock %}
+</head>
 
-	<body class="{{body_class}}" data-template="base.twig">
-		<header class="header" >
-			{% block header %}
-				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="/" rel="home">{{site.name}}</a>
-					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
-						<ul class="nav">
-						{% for item in menu.get_items %}
-							<li class="nav-item {{item.classes | join(' ')}}">
-								<a class="nav-link" href="{{item.get_link}}">{{item.title}}</a>
-								{% if item.get_children %}
-									<ul class="nav nav-drop">
-									{% for child in item.get_children %}
-										<li class="nav-drop-item">
-											<a class="nav-link" href="{{child.get_link}}">{{child.title}}</a>
-										</li>
-									{% endfor %}
-									</ul>
-								{% endif %}
-							</li>
-						{% endfor %}
-						</ul>
-					</nav><!-- #nav -->
-				</div>
-			{% endblock %}
-		</header>
+<body class="{{body_class}}" data-template="base.twig">
+  <!-- inject:svg -->
+  <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="chat" viewBox="0 0 32 32"><path d="M32 16a16 12 0 0 0-32 0 16 12 0 0 0 16 12h2c2 2 6 4 10 4-1-1-2-4-2-6.625A16 12 0 0 0 32 16"/></symbol><symbol id="user" viewBox="0 0 32 32"><path d="M10 8a6 6 0 0 1 12 0v4a6 6 0 0 1-12 0zM2 26c1-3 8-6 12-6h4c4 0 11 3 12 6v2H2z"/></symbol></svg>
+  <!-- endinject -->
 
-		<section id="content" role="main" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
-			</div>
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-			{% endif %}
-		</section>
+  {% render "@header" %}
 
-		{% block footer %}
-			<footer id="footer">
-				{% include 'footer.twig' %}
-			</footer>
-			{{ function('wp_footer') }}
+	<main id="content">
+		{% block content %}
 		{% endblock %}
-	</body>
+	</main>
+
+
+  {% render "@tab-bar" %}
+
+  <script src="{{ site.theme.uri }}/js/bundle.js"></script>
+</body>
+
+
 </html>

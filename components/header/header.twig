@@ -1,0 +1,18 @@
+<header class="header" >
+  <div class="container">
+    <h1 class="header-logo" role="banner">
+      <a class="header__link" href="/" rel="home">{{ site.name }}</a>
+    </h1>
+    <nav id="nav-main" class="header__nav" role="navigation">
+      {% if is_logged_in %}
+        <section class="hide-on-mobile">
+          <a class="header__nav-link" href="/profile">Profile</a>
+          <a class="header__nav-link" href="/connect">Connect</a>
+        </section>
+        <a class="header__nav-link" href="{{ fn('wp_logout_url') }}">Logout</a>
+      {% else %}
+        <a class="header__nav-link" href="/wp-login.php">Login</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>

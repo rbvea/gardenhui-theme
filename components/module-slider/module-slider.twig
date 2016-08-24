@@ -1,0 +1,10 @@
+<div class="slider">
+  {% for slide in images %}
+    {% set image = TimberImage(slide.image)%}
+    <div class="slider__image" style="background-image: url('{{ image.src('hero') }}')">
+      <div class="slider__content container container--narrow">
+          <div class="slider__description"> {{ slide.text }}</div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

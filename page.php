@@ -23,5 +23,11 @@
 
 $context = Timber::get_context();
 $post = new TimberPost();
+if($post->slug == 'homepage') {
+  acf_form_head();
+  if($context['is_logged_in'] === TRUE){
+    wp_redirect('/connect');
+  }
+}
 $context['post'] = $post;
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

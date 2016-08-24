@@ -1,0 +1,29 @@
+.profile-list {
+  &__wrapper {
+    background: $white;
+    padding: 2% 2.4% 5%;
+  }
+  &__title {
+  }
+}
+
+.profile {
+  @media $desktop {
+    lost-column: 4/12;
+  }
+  text-align: center;
+  background: #EFEFEF;
+  padding: 0 2% 2%;
+
+  &__name-link {
+    color: $olive;
+  }
+
+  &__wrapper {
+    clear: fix;
+  }
+
+  &__image {
+    border-radius: 50%;
+  }
+}

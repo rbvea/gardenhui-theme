@@ -1,0 +1,54 @@
+.slider {}
+
+.frame {
+    width: 100%;
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.slides {
+    display: inline-block;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: {
+    size: cover;
+  }
+
+  &__image {
+    width: 100%;
+    height: calc(100vh - 75px);
+    display: flex;
+    align-items: center;
+    background: {
+      size: cover;
+      color: rgba(darken($olive, 15%), 0.5);
+      blend-mode: color-burn;
+    }
+  }
+
+  &__title,
+  &__description {
+    color: $white;
+    text-shadow: 0 0 10px $black;
+  }
+
+  &__title {
+    font-size: ms(3);
+  }
+
+  &__description {
+    font-size: responsive 18px 36px;
+    line-height: 1.25;
+  }
+}
+
+.flickity-page-dots {
+  bottom: 1rem;
+}

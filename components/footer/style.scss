@@ -1,0 +1,8 @@
+.footer {
+  background: $white;
+  color: lighten($black, 10%);
+  box-shadow: 0 0 10px rbga($black, 0.8);
+  margin: 4em 0 0;
+  padding: 2em 0;
+  text-align: center;
+}

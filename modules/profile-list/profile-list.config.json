@@ -1,0 +1,17 @@
+{
+  "context": {
+    "title": "Growers",
+    "people":  [
+      {
+        "first_name": "John",
+        "last_name": "Doe",
+        "image": "http://lorempixel.com/people/400/400"
+      },
+      {
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "image": "http://lorempixel.com/people/400/400"
+      }
+    ]
+  }
+}
