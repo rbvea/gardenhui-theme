@@ -1,0 +1,20 @@
+{#
+ #  Component: Tab Bar
+ #}
+
+{% if is_logged_in %}
+  <nav class="tab-bar">
+    <a href="/connect" class="tab-bar-item">
+      Connect
+      <svg class="tab-bar__icon">
+        <use xlink:href="#chat"></use>
+      </svg>
+    </a>
+    <a href="/profile" class="tab-bar-item">
+      Profile
+      <svg class="tab-bar__icon">
+        <use xlink:href="#user"></use>
+      </svg>
+    </a>
+  </nav>
+{% endif %}

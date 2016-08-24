@@ -1,0 +1,25 @@
+.tab-bar {
+  display: none;
+  @media $handheld {
+    display: flex;
+  }
+  background: $white;
+  position: fixed null 0 0 0;
+  text-align: center;
+  box-shadow: 0 0 10px rgba($black, 0.8);
+
+  &__icon {
+    width: 1em;
+    height: 1em;
+    flex: 1 0 100%;
+  }
+
+  &-item {
+    flex: 1 0 auto;
+    padding: 1em 0;
+    color: $black;
+    + .tab-bar-item {
+      border-left: 1px solid $gray;
+    }
+  }
+}
